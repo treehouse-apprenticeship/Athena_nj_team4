@@ -23,9 +23,14 @@ const {
   successResponse,
 } = require('./helpers');
 const db = require('../db');
-const { authMiddleware } = require('../middleware');
+const {
+  authMiddleware
+} = require('../middleware');
 
-const { authenticateUser, getCurrentUser } = authMiddleware;
+const {
+  authenticateUser,
+  getCurrentUser
+} = authMiddleware;
 const promiseRouter = new PromiseRouter();
 
 promiseRouter.get('/',
@@ -40,11 +45,12 @@ promiseRouter.post('/', async (req, res) => {
 
   // encrypt the new user's password (if available)
   if (user.password) {
-    user.password = bcryptjs.hash(user.password, 10);
+    user.password = bcryptjs.hashSync(user.password, 10);
   }
 
   await db.repository.createUser(user);
-  createdResponse(res, '/');
+   res.location('/');
+   res.status(201).end();
 });
 
 module.exports = promiseRouter;
