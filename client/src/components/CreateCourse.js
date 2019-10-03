@@ -29,8 +29,8 @@ export default class CreateCourse extends Component {
 
     return (
       <div className="bounds course--detail">
-        <h1>Create Workshop</h1>
-        <Form 
+        <h1>Create Course</h1>
+        <Form
           cancel={this.cancel}
           errors={errors}
           submit={this.submit}
@@ -40,20 +40,20 @@ export default class CreateCourse extends Component {
               <div className="grid-66">
                 <div className="course--header">
                   <h4 className="course--label">Course</h4>
-                  <FormField 
-                    fieldName="title" 
-                    label="Course title..." 
-                    value={title} 
+                  <FormField
+                    fieldName="title"
+                    label="Course title..."
+                    value={title}
                     handleChange={this.change}
                     className="input-title course--title--input" />
                   <p>By {firstName} {lastName}</p>
                 </div>
                 <div className="course--description">
-                  <FormField 
+                  <FormField
                     type="textarea"
-                    fieldName="description" 
-                    label="Course description..." 
-                    value={description} 
+                    fieldName="description"
+                    label="Course description..."
+                    value={description}
                     handleChange={this.change} />
                 </div>
               </div>
@@ -62,20 +62,20 @@ export default class CreateCourse extends Component {
                   <ul className="course--stats--list">
                     <li className="course--stats--list--item">
                       <h4>Estimated Time</h4>
-                      <FormField 
-                        fieldName="estimatedTime" 
-                        label="Hours" 
-                        value={estimatedTime} 
+                      <FormField
+                        fieldName="estimatedTime"
+                        label="Hours"
+                        value={estimatedTime}
                         handleChange={this.change}
                         className="course--time--input" />
                     </li>
                     <li className="course--stats--list--item">
                       <h4>Materials Needed</h4>
-                      <FormField 
+                      <FormField
                         type="textarea"
-                        fieldName="materialsNeeded" 
-                        label="List materials..." 
-                        value={materialsNeeded} 
+                        fieldName="materialsNeeded"
+                        label="List materials..."
+                        value={materialsNeeded}
                         handleChange={this.change} />
                     </li>
                   </ul>
