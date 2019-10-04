@@ -7,7 +7,7 @@ export default class CourseDetail extends Component {
   };
 
   componentDidMount() {
-    const { context: { data }, match: { params: { id }} } = this.props;
+    const { context: { data }, match: { params: { id } } } = this.props;
 
     data.getCourse(id)
       .then((course) => {
@@ -69,7 +69,8 @@ export default class CourseDetail extends Component {
                   {course.materialsNeeded &&
                     <li className="course--stats--list--item">
                       <h4>Materials Needed</h4>
-                      <ReactMarkdown source={course.materials} />
+                      <ReactMarkdown source={course.materialsNeeded} />
+
                     </li>
                   }
                 </ul>
